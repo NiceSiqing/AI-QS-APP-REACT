@@ -1,0 +1,91 @@
+.login-main {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    .login-page_intro {
+        width: 50%;
+        padding: 160px 100px;
+        min-height: 100vh;
+        background: linear-gradient(
+        135deg,
+         #204fae 20%,    
+         #63c4ee 65%,    
+         #103060 100%    
+        );
+        position: relative;
+        overflow: hidden;
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+            linear-gradient(to right, rgba(222, 37, 37, 0.08) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px);
+            background-size: 100px 100px;
+            pointer-events: none;
+            z-index: 1;
+        }
+        > * {
+            position: relative;
+            z-index: 2;
+        }
+
+
+        .intro-header_title {
+            font-weight: bold;
+            font-size: 3rem;
+            background: linear-gradient(to right, #57a2f1, #fbfcfc);
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 50px;
+        }
+        .login-slogan {
+            font-weight: bold;
+            font-size: 2.25rem;
+            color: #fff;
+            margin-bottom: 30px;
+            span {
+                color: #57a2f1;
+            }
+        }
+        .login-desc-card {
+            max-width: 600px;
+            width: 100%;
+            position: relative;
+            padding: 24px 32px;
+            background: rgba(32, 79, 174, 0.3);  
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1.25rem;
+            line-height: 1.7;
+            margin-bottom: 32px;
+            box-shadow: 0 4px 24px 0 rgba(0,0,0,0.08);
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0; top: 0px; bottom: 0px;
+                width: 4px;
+                border-radius: 6px;
+                background: linear-gradient(180deg, #26d0ce, #73d1ed);
+            }
+            p {
+                margin: 0;
+                color: inherit;
+                font-size: inherit;
+                line-height: inherit;
+            }
+        }
+
+        .login-feature-list {
+            padding-left: 1.25rem;
+            color: #fff;
+            font-size: 1rem;
+            list-style: disc;
+        }
+    }
+    .login-page_form {
+        width: 50%;
+        
+    }
+}
