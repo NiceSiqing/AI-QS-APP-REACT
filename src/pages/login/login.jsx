@@ -1,29 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'   // 用于跳转
-import { login } from '../../api/auth'
+import React, { useEffect} from 'react'
+// import { useNavigate } from 'react-router-dom'   // 用于跳转
+// import { login } from '../../api/auth'
+import LoginPage from './login_components/LoginPage'
 import  './login.less'
 
 export default function Login() {
   useEffect(()=> {
     document.title = '登录 - 药德'
   }, [])  
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-  const navigate = useNavigate()   // 获取路由跳转函数
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    try {
-      const res = await login({ username, password })
-      // 假设后端返回 access_token 字段
-      localStorage.setItem('token', res.access_token)
-      // 跳转到首页
-      navigate('/home')
-    } catch (err) {
-      alert('登录失败，请检查用户名和密码')
-      console.log('登录失败详细信息：',err.message)
-    }
-  }
 
   return (
     <main className='login-main'>
@@ -47,16 +32,16 @@ export default function Login() {
             </ul>
             <div className="login-data-bar">
                 <div className="login-data-item">
-                    <span className="data-item__main">500+</span>
-                    <span className="data-item__desc">合作企业</span>
+                    <span className="data-item_main">500+</span><br />
+                    <span className="data-item_desc">合作企业</span>
                 </div>
                 <div className="login-data-item">
-                    <span className="data-item__main">99.9%</span>
-                    <span className="data-item__desc">系统稳定性</span>
+                    <span className="data-item_main">99.9%</span><br />
+                    <span className="data-item_desc">系统稳定性</span>
                 </div>
                 <div className="login-data-item">
-                    <span className="data-item__main">24/7</span>
-                    <span className="data-item__desc">技术支持</span>
+                    <span className="data-item_main">24/7</span><br />
+                    <span className="data-item_desc">技术支持</span>
                 </div>
             </div>
 
@@ -66,21 +51,20 @@ export default function Login() {
         
         {/* 右边表格部分 */}
         <div className="login-page_form">
-            <form className="login-form" onSubmit={handleSubmit}>
-            <input
-            value={username}
-            onChange={e => setUsername(e.target.value)}
-            placeholder="用户名"
-            />
-            <input
-                value={password}
-                type="password"
-                onChange={e => setPassword(e.target.value)}
-                placeholder="密码"
-            />
-            <button type="submit">登录</button>
-            </form>
+            <div className="login-area" >
+                <LoginPage />
             </div>
+            <div className="login-form_footer">
+                <div className="footer-links">
+                    <span>服务条款 |</span>
+                    <span> 隐私条款 |</span>
+                    <span> 帮助中心</span>
+                </div>
+                <br />
+                <span>© 2021-2024 华强科技有限公司版权所有 备案编号：0512-68678768 苏ICP备</span>
+                <span>2021034320号-1</span>
+            </div>
+        </div>
 
     </main>
 
