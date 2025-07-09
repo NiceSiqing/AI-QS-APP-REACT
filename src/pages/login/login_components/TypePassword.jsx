@@ -1,20 +1,19 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Eye,EyeOff,Lock,User } from 'lucide-react';
-export default function TypePassword() {
+import './TypeComponents.less'
+export default function TypePassword({onChange}) {
     const [username,setUsername] = useState('')
     const [password,setPassword] = useState('')
     const [showpwd,setShowpwd] = useState(false)
 
-    const handleSubmit = e => {
-        e.preventDefault();
-        
-        alert(`账号：${username}\n密码：${password}`);
-    };
+      useEffect(() => {
+        onChange && onChange({username, password});
+    }, [username, password]);
 
     return (
-    <form onSubmit={handleSubmit}>
+    <>
         <div className="form-item">
-            <label>用户名<User /></label>
+            <label><User />用户名</label>
             <input 
                 value={username}
                 onChange={e => setUsername(e.target.value)}
@@ -24,21 +23,22 @@ export default function TypePassword() {
                 
         </div>
         <div className="form-item">
-            <label>登录密码<Lock /></label>
-            <input
-                type="password"
-                value={password}
-                onChange={e => setPassword(e.target.value)}
-                placeholder='请输入登录密码' 
-                autoComplete="current-password"
-            />
-            <span className='showpwdToggle' onClick={() => setShowpwd(prev => !prev)}>
-                {showpwd === true? <Eye /> : <EyeOff /> }
-            </span>
+            <label><Lock />登录密码</label>
+            <div className="input-with-icon">
+                <input
+                    type= {showpwd ? "text" : "password"}
+                    value={password}
+                    onChange={e => setPassword(e.target.value)}
+                    placeholder='请输入登录密码' 
+                    autoComplete="current-password"
+                />
+                <span className='showpwdToggle' onClick={() => setShowpwd(prev => !prev)}>
+                    {showpwd === true? <Eye /> : <EyeOff /> }
+                </span>
+            </div>
+                
         </div>
-        <button className='login-button' type='submit' >
-            立即登录
-        </button>
-    </form>
+
+    </>
     )
 }

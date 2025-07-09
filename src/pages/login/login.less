@@ -134,13 +134,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 3rem 0;
+        padding: 2rem 0;
         background: linear-gradient(45deg, #ffffff ,#c1e8f4 );
         .login-area {
             width: 100%;
             max-width: 540px;
             min-width: 360px;
-            padding: 2rem;
+            padding: 1.75rem 2rem;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -155,10 +155,9 @@
                 align-items: center;
                 font-size: 1rem;
                 color: #6B7280;
-                margin-bottom: 2rem;
+                margin-bottom: 1.75rem;
                 margin-top: 0.5rem;
                 .yaodelogo {
-
                     height: 3rem;
                     margin-bottom: 1.5rem;
                 }
@@ -169,65 +168,84 @@
                 }
 
             }
-            .login-form{
+            .login-button {
                 width: 100%;
-                .login-tabs {
-                    position: relative;
-                    width: 100%;
-                    height: 4rem;
+                height: 4rem;
+                border: none;
+                border-radius: 1rem;
+                margin-top: 1.5rem;
+                margin-bottom: 1rem;
+                background: linear-gradient(90deg, #217aff 0%, #19b7fa 50%, #217aff 100%);
+                color: #fff;
+                font-size: 1.25rem;
+                font-weight: bold;
+                letter-spacing: 3px;
+                cursor: pointer;
+                box-shadow: 0 4px 16px 0 rgba(33, 122, 255, 0.12);
+                transition: 
+                background 0.2s, 
+                opacity 0.2s,
+                transform 0.16s cubic-bezier(.35,0.6,.47,0.75);
+                outline: none;
+                display: block;
+                &:hover,
+                &:focus {
+                    transform: scale(1.05);
+                }
+                &:active {
+                    opacity: 0.92;
+                }
+                &:disabled {
+                    background: #b3cdfa;
+                    cursor: not-allowed;
+                    opacity: 0.65;
+                }
+            }
+            .login-footer {
+                display: flex;
+                align-items: center;
+                font-size: 1rem;
+                span {
+                    margin-right: 1.5rem;
+                    
+                }
+                .login-footer-label {
+                    color: #217aff;
+                    cursor: pointer;
                     display: flex;
-                    background: #eff2f6;
-                    border-radius: 1.5rem;
-                    box-shadow: 0 2px 16px 0 rgba(36,110,255,0.06);
-                    border: 1.5px solid #f2f4fa;
-                    padding: 0 0.5rem;
-                    margin-bottom: 2rem;
-                    .login-tabs-slider {
-                        position: absolute;
-                        top: 0.25rem;
-                        left: 0.5rem;
-                        width: calc(50% - 0.5rem);
-                        height: 3.4rem;
-                        background: #fff;
-                        border-radius: 1.2rem;
-                        box-shadow: 0 4px 16px 0 rgba(36,110,255,0.08);
-                        transition: transform 0.32s cubic-bezier(.6,.2,.4,1);
-                        z-index: 1;
-                    }
-                    .login-tab {
-                        min-width: 120px;
-                        flex: 1;
-                        z-index: 2;
-                        font-size: 1.1rem; 
-                        text-align: center;
-                        cursor: pointer;
-                        background: transparent;
-                        color: #abafb6;
-                        transition: all 0.2s;
-                        font-weight: 500;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        .tab-icon {
-                            margin-right: 1rem;
-                        }
-                        &.active {
-                            color: #236aff;
-                    }
-                        
+                    align-items: center;
+                    &:hover,
+                    &:focus {
+                        text-decoration: underline;
                     }
 
                 }
+
             }
+
         }
-        .login-form_footer {
+        .login-page-form_footer {
             display: flex;
             flex-direction: column;
             align-items: center;
             font-size: 0.8rem;
             .footer-links {
                 font-size: 1rem;
+                text-align: center;
+                margin-bottom: 0.1rem;
+                span {
+                    cursor: pointer;
+                    &:hover,
+                    &:focus {
+                        text-decoration: underline;
+                        color: #217aff;
+                    }
+                }
             }
         }
     }
+
+
+
+
 }

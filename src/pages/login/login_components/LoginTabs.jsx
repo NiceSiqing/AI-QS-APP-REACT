@@ -1,4 +1,4 @@
-
+import './LoginTabs.less'
 import { Smartphone,Lock } from 'lucide-react';
 
 export default function LoginTabs({ active, onChange }) {

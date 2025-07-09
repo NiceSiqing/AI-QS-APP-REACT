@@ -1,13 +1,13 @@
 import LoginHeader from './LoginHeader'
 import LoginFooter from './LoginFooter'
 import LoginForm from './LoginForm'
-import LoginTabs from './LoginTabs'
 
-export default function LoginPage() {
+
+export default function LoginPage({onLogin}) {
     return(
         <>
             <LoginHeader />          
-            <LoginForm />
+            <LoginForm onLogin={onLogin}/>
             <LoginFooter />
         </>
     )

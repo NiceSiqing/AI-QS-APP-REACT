@@ -1,0 +1,48 @@
+.login-form {
+  width: 100%;
+}
+.login-form .login-tabs {
+  position: relative;
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  background: #eff2f6;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 16px 0 rgba(36, 110, 255, 0.06);
+  border: 1.5px solid #f2f4fa;
+  padding: 0 0.5rem;
+  margin-bottom: 2rem;
+}
+.login-form .login-tabs .login-tabs-slider {
+  position: absolute;
+  top: 0.25rem;
+  left: 0.5rem;
+  width: calc(50% - 0.5rem);
+  height: 3.4rem;
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 16px 0 rgba(36, 110, 255, 0.08);
+  transition: transform 0.32s cubic-bezier(0.6, 0.2, 0.4, 1);
+  z-index: 1;
+}
+.login-form .login-tabs .login-tab {
+  min-width: 120px;
+  flex: 1;
+  z-index: 2;
+  font-size: 1.1rem;
+  text-align: center;
+  cursor: pointer;
+  background: transparent;
+  color: #abafb6;
+  transition: all 0.2s;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-form .login-tabs .login-tab .tab-icon {
+  margin-right: 1rem;
+}
+.login-form .login-tabs .login-tab.active {
+  color: #236aff;
+}
