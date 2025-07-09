@@ -14,31 +14,24 @@ export default function LoginForm({onLogin}) {
   const [smsForm, setSmsForm] = useState({});
   const [pwdForm, setPwdForm] = useState({});
 
-  const handleLogin = (event, formData) => {
+  const handleLogin = (event) => {
     event.preventDefault();
     if (!agree) {
       alert('请先同意《用户服务协议》和《隐私保护政策》');
       return;
     }
     if (onLogin) {
-      onLogin(loginType === 'password' ? pwdForm : smsForm, loginType, rememberMe)
+      onLogin(loginType === 'password' ? pwdForm : smsForm, 
+        loginType, 
+        rememberMe
+      )
     }
   };
 
 
   return (
-  <div className="login-form">
+  <form className="login-form" onSubmit={handleLogin}>
     <LoginTabs active={loginType} onChange={setLoginType} />
-    <form
-      onSubmit={e => {
-        if (loginType === 'password') {
-          handleLogin(e, pwdForm);
-        } else {
-          handleLogin(e, smsForm);
-        }
-      }}>
-
-    </form>
     {loginType === 'password' ? (
       <TypePassword onChange={setPwdForm} />
     ) : (
@@ -56,6 +49,6 @@ export default function LoginForm({onLogin}) {
     <button className="login-button" type="submit">
         立即登录
     </button>
-  </div>
+  </form>
   )
 }
