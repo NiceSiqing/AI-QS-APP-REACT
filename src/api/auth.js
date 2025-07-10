@@ -3,7 +3,7 @@ import qs from 'qs'
 
 export function login({ username, password, code = '', randomStr = 'blockPuzzle' }) {
   return axios.post(
-    '/api/auth/oauth2/token',
+    '/auth/oauth2/token',
     qs.stringify({
       username,
       password,
@@ -20,7 +20,7 @@ export function login({ username, password, code = '', randomStr = 'blockPuzzle'
         'skiptoken': 'true'
       }
     }
-  )
+  ).then(res => console.log(res)).catch(err => console.error(err));
 }
 
 

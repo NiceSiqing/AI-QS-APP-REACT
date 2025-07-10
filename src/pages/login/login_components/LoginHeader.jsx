@@ -1,4 +1,4 @@
-import YaodeLogo  from './YaodeLogo'
+import YaodeLogo  from '@/components/YaodeLogo'
 export default function LoginHeader() {
     return (
         <div className="login-form-header">

@@ -6,8 +6,8 @@ import NotFound from './pages/notfound/notfound'
 
 function App() {
   // 判断本地是否有 token，用于做未登录的路由保护
-  const token = localStorage.getItem('token')
-
+  // const token = localStorage.getItem('token')
+  const token = true
   return (
     <BrowserRouter>
       <Routes>
