@@ -2,7 +2,7 @@ import YaodeLogo from "@/components/YaodeLogo";
 import AiHistory from "./AiHistory";
 import AiNewChat from "./AiNewChat";
 
-export default function AiSidebar() {
+export default function AiSidebar({setInputValue}) {
     return (
         <aside className="ai-sidebar">
             <div className="sidebar">
@@ -11,7 +11,7 @@ export default function AiSidebar() {
                         <YaodeLogo  />
                     </div>
                 </div>
-                <AiNewChat />
+                <AiNewChat setInputValue={setInputValue} />
                 <AiHistory />
             </div>
         </aside>

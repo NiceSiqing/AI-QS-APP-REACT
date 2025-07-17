@@ -3,7 +3,7 @@ import { Eye,EyeOff,Lock,User } from 'lucide-react';
 import './TypeComponents.less'
 export default function TypePassword({onChange}) {
     const [username,setUsername] = useState('')
-    const [password,setPassword] = useState('')
+    const [password,setPassword] = useState('eoSE8Hs2hy8=')
     const [showpwd,setShowpwd] = useState(false)
 
       useEffect(() => {

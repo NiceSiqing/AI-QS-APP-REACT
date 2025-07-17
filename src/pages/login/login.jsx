@@ -4,16 +4,19 @@ import { login } from '@/api/auth'
 import LoginPage from './login_components/LoginPage'
 import  './login.less'
 
-export default function Login() {
+export default function Login({ setToken }) {
     const navigate = useNavigate();
     useEffect(()=> {
         document.title = '登录 - 药德'
     }, [])  
     const handleLogin = async (formData) => {
         try {
-            const res = await login(formData); // formData {username, password, ...}
+            
+            const data = await login(formData); // formData {username, password, ...}
+            console.log('登录接口返回:', data)
             // 假如登录成功返回 token
-            localStorage.setItem('token', res.data.access_token);
+            localStorage.setItem('token', data.access_token);
+            setToken(data.access_token);
             // 跳转
             navigate('/home');
         } catch (err) {

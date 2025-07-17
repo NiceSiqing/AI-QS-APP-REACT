@@ -1,3 +1,4 @@
+import './AiHeader.less'
 export default function AiHeader() {
     return (
     <div className="ai-header">

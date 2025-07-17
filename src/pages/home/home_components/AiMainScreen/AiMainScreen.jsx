@@ -1,18 +1,17 @@
-import AiBubblePopover from "./AiBubblePopover";
-import AiChatContent from "./AiChatContent";
-import AiGuideList from "./AiGuideList";
-import AiHeader from "./AiHeader";
-import AiInputBox from "./AiInputBox";
+import BailianChat from '../BailianChat/BailianChat';
+import AiGuideList from "./AiGuideList/AiGuideList";
+import AiHeader from "./AiHeader/AiHeader";
 
-export default function AiMainScreen() {
+
+export default function AiMainScreen({inputValue,setInputValue, messages,setMessages}) {
+    
     return (
         <main className="ai-main-screen">
             <section className="ai-main-screen-container">
                 <AiHeader />
-                <AiGuideList />
-                <AiChatContent />
-                <AiBubblePopover />
-                <AiInputBox />
+                <AiGuideList setInputValue={setInputValue} />
+                <BailianChat inputValue={inputValue} setInputValue={setInputValue} messages={messages} setMessages={setMessages} />
+
             </section>
         </main>
 

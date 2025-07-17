@@ -15,8 +15,12 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/auth': {
-        target: 'http://localhost:8000',
+      '/bailian': {
+        target: 'https://test-salus.huahill.com',
+        changeOrigin: true,
+      },
+      '/api': {
+        target: 'https://test-salus.huahill.com',
         changeOrigin: true,
       }
     }

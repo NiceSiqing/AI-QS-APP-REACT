@@ -1,5 +1,5 @@
 // src/pages/home/home.jsx
-import React, {useEffect} from 'react'
+import React, {useEffect,useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 import AiSidebar from './home_components/AiSideBar/AiSideBar'
 import AiLogOut from './home_components/AiLogOut'
@@ -16,10 +16,12 @@ export default function Home() {
     localStorage.removeItem('token')
     navigate('/login')
   }
+  const [inputValue, setInputValue] = useState('');
+  const [messages, setMessages] = useState([]);
   return (
     <main className='home-main'>
-      <AiSidebar  />
-      <AiMainScreen />
+      <AiSidebar setInputValue={setInputValue} setMessages={setMessages} />
+      <AiMainScreen inputValue={inputValue} setInputValue={setInputValue} messges={messages} setMessages={setMessages} />
       <AiLogOut onClick={handleLogout} />
     </main>
   )
